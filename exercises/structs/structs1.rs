@@ -4,19 +4,16 @@
 //
 // Execute `rustlings hint structs1` or use the `hint` watch subcommand for a
 // hint.
+
+// I AM NOT DONE
+
 struct ColorClassicStruct {
-    // 定义RGB三个颜色通道，都是u8类型
     red: u8,
     green: u8,
     blue: u8,
 }
 
-struct ColorTupleStruct(
-    // 定义元组结构体的三个元素，都是u8类型
-    u8,
-    u8,
-    u8,
-);
+struct ColorTupleStruct(u8, u8, u8);
 
 #[derive(Debug)]
 struct UnitLikeStruct;
@@ -51,7 +48,7 @@ mod tests {
 
     #[test]
     fn unit_structs() {
-        // 实例化单元结构体
+        // 实例化类单元结构体
         let unit_like_struct = UnitLikeStruct;
         let message = format!("{:?}s are fun!", unit_like_struct);
 

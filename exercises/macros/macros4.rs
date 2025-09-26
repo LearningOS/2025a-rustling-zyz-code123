@@ -9,7 +9,7 @@
 macro_rules! my_macro {
     () => {
         println!("Check out my macro!");
-    }
+    }; // 添加分号分隔不同的宏模式
     ($val:expr) => {
         println!("Look at this other macro: {}", $val);
     }

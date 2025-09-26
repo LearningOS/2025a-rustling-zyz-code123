@@ -13,7 +13,13 @@ mod macros {
             println!("Check out my macro!");
         };
     }
+
+    // 将宏导出，使其可以在模块外部使用
+    pub(crate) use my_macro;
 }
+
+// 引入模块中的宏
+use macros::my_macro;
 
 fn main() {
     my_macro!();

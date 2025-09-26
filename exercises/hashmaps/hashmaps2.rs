@@ -37,9 +37,8 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // TODO: Insert new fruits if they are not already present in the
-        // basket. Note that you are not allowed to put any type of fruit that's
-        // already present!
+        // 只插入篮子中不存在的水果，且每种至少添加1个
+        basket.entry(fruit).or_insert(1);
     }
 }
 

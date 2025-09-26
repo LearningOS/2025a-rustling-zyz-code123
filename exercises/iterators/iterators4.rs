@@ -15,6 +15,8 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    // 使用迭代器从1到num（包含num）生成序列，然后计算乘积
+    (1..=num).product()
 }
 
 #[cfg(test)]

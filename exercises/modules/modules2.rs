@@ -10,9 +10,9 @@
 // I AM NOT DONE
 
 mod delicious_snacks {
-    // TODO: Fix these use statements
-    use self::fruits::PEAR as ???
-    use self::veggies::CUCUMBER as ???
+    // 使用pub use使导入的常量在模块外部可见
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
 
     mod fruits {
         pub const PEAR: &'static str = "Pear";
@@ -32,3 +32,5 @@ fn main() {
         delicious_snacks::veggie
     );
 }
+
+

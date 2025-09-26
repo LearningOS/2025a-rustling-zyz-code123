@@ -29,8 +29,31 @@ impl Graph {
     fn bfs_with_return(&self, start: usize) -> Vec<usize> {
         
 		//TODO
-
+        // 填补开始：BFS算法实现
+        // 1. 初始化访问标记数组，记录节点是否已被访问
+        let mut visited = vec![false; self.adj.len()];
+        // 2. 初始化队列，用于BFS的层级遍历
+        let mut queue = VecDeque::new();
+        // 3. 初始化访问顺序记录向量
         let mut visit_order = vec![];
+
+        // 4. 标记起始节点为已访问，加入队列和访问顺序
+        visited[start] = true;
+        queue.push_back(start);
+        visit_order.push(start);
+
+        // 5. 当队列不为空时，继续遍历
+        while let Some(node) = queue.pop_front() {
+            // 6. 遍历当前节点的所有邻接节点
+            for &neighbor in &self.adj[node] {
+                // 7. 如果邻接节点未被访问，则标记为已访问并加入队列和访问顺序
+                if !visited[neighbor] {
+                    visited[neighbor] = true;
+                    queue.push_back(neighbor);
+                    visit_order.push(neighbor);
+                }
+            }
+        }
         visit_order
     }
 }
